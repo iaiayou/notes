@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Page Visibility API</title>
+</head>
+<body>
+	<script>
+
+	document.addEventListener('webkitvisibilitychange',function(){
+		console.log('change')
+		console.log(document.webkitHidden,document.webkitVisibilityState)
+	})
+	// EventUtil.addHandler(document,'webkitvisibility',function(){
+		// 	console.log('change')
+		// })
+	</script>
+</body>
+</html>
