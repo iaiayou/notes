@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS盒模型</title>
+	<style type="text/css">
+		html *{
+			margin:0;
+			padding:0;
+		}
+	</style>
+</head>
+<body>
+	<section class="fa">
+		<style type="text/css">
+			/*父子元素边距重叠情况：父元素加overflow：hidden则父元素height为110px，margin部分看到红色背景；
+				父元素不加overflow：hidden时则父元素height为100px，margin部分为白色，红色被盖住*/  
+			.fa{
+				background-color: red;
+				overflow:hidden;
+			}
+			.child{
+				background-color:yellow;
+				height:100px;
+				margin-top:10px;
+			}
+		</style>
+		<article class="child">
+		</article>
+	</section>
+
+	<section id='margin'></section>
+</body>
+</html>

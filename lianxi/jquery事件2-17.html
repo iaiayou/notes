@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    /*此处写代码*/
+    *{
+    	margin:0;
+    	padding:0;
+    }
+    .main{
+		width: 700px;
+		margin:10px auto;
+    }
+    ul{
+    	display:block;
+    	padding-left: 30px;
+    }
+    ul li{
+    	float:left;
+    	width:100px;
+    	height:20px;
+    	line-height: 20px;
+    	text-align: center;
+    	margin:0 3px;
+    	list-style-type: none;
+    	background:blue;
+    	color:#fff;
+    	border:1px blue solid;
+    	border-radius:8px 8px 0 0;
+    	position:relative;
+    	z-index:1;
+    }
+    .content{
+    	width:500px;
+		height:300px;
+		border:1px blue solid;
+		float:left;
+		display:none;
+		margin-top: -1px;
+    }
+    .co-active{
+		display:block;
+    }
+    .li-active{
+    	border-bottom:1px #fff solid;
+    	color:#000;
+    	background: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 此处写代码 -->
+    <div class="main">
+    	<div class="tab">
+    		<ul>
+	    		<li id="1" class="li-active">DOM0</li>
+	    		<li id="2">DOM2</li>
+	    		<li id='3'>JQUERY</li>
+	    	</ul>
+    	</div>
+    	<div style="clear:both;"></div>
+    	<div class="content content1 co-active">DOM0</div>
+    	<div class="content content2">DOM2</div>
+    	<div class="content content3">JQUERY</div>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript">
+    // 此处写代码
+    	$('ul li').click(function(){
+    		$('ul li').removeClass('li-active');
+    		$('.content').removeClass('co-active');
+    		var index = $(this).attr('id');
+    		console.log(index)
+    		$(this).addClass('li-active');
+    		$('.content'+index).addClass('co-active');
+    	});
+    </script>
+</body>
+</html>

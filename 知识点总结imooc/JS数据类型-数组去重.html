@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组去重</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var arrayDistinct =  function(array){
+		var arr=[];
+		for(var i=0;i<array.length;i++){
+			for(var k=i+1;k<array.length;k++){
+				if(array[i]==array[k]){
+					k=++i;
+				}
+			}
+			arr.push(array[i])
+		}
+		return arr;
+	}
+	var arra = [1,2,3,4,4,1,1,2,1,1,1];
+	console.log(arrayDistinct(arra))
+</script>
+</html>

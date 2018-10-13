@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<title>另某个域的:b.html</title>
+
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<script type="text/javascript">
+function checkHash(){
+    var data = '';
+    //模拟一个简单的参数处理操作
+    switch(location.hash){
+        case '#sayHello':
+              data = 'HelloWorld';
+              break;
+        case '#sayHi':
+              data = 'HiWorld';
+              break;
+        default : break;
+    }
+    data && callBack('#'+data);
+}
+function callBack(hash){
+   var proxy = document.createElement('iframe');
+   proxy.style.display = 'none';
+   proxy.src = 'http://localhost/c.html'+hash;
+   document.body.appendChild(proxy);
+}
+window.onload = checkHash;
+</script>
+</body>
+</html>

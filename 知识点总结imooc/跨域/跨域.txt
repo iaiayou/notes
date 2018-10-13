@@ -1,0 +1,22 @@
+1.基于js脚本实现跨域
+2.基于js脚本实现跨域，指定返回函数名
+3.基于jquery实现跨域
+	跨域请求只能是get请求不能使用post请求；
+	dataType:jsonp；
+	jsonp 传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)；
+	jsonpCallback 自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名；
+	因为是当一个js文件引入的，所以后台返回的必须是一个能执行的js文件。
+4.img的src可以自动调用远程图片的
+5.通过iframe实现跨子域
+	基于iframe实现的跨域要求两个域具有aa.xx.com,bb.xx.com 这种特点，；
+	也就是两个页面必须属于一个基础域（例如都是xxx.com)，且使用同一协议和同一端口，
+	这样在两个页面中同时添加document.domain，就可以实现父页面调用子页面的函数；
+	要点 :通过修改document.domain来跨子域
+	(只适用于不同子域的框架间的交互，不能通过ajax直接请求页面。)
+6.Hash实现跨域
+7.postMessage实现跨域
+	IE8+
+8.WebSocket实现跨域
+9.CORS实现跨域
+	IE10+
+10.window.name实现跨域

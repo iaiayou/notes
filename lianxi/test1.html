@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>userAgent</title>
+    </head>
+    <body>
+       <input type="button" value="点击获取浏览器信息" id="browser">
+       <script type="text/javascript">
+           //补充代码
+           document.getElementsByTagName('input')[0].onclick=function(){
+           	var name = navigator.appVersion
+           	if(name.indexOf('Chrome')>0){
+           		alert('您使用的是浏览器是：谷歌浏览器')
+           	}
+           	if(name.indexOf('Firefox')>0){
+           		alert('您使用的是浏览器是：火狐浏览器')
+           	}
+           	if(name.indexOf('MSIE')>0){
+           		alert('您使用的是浏览器是：IE浏览器')
+           	}
+           	if(name.indexOf('Safari')>0){
+           		alert('您使用的是浏览器是：Safari浏览器')
+           	}
+           }
+       </script>
+    </body>
+</html>

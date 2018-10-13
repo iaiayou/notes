@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>localhost:a.html</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+<script type="text/javascript">
+    alert('我是a页面');
+    function sendRequest(){
+        //动态创建个iframe
+        var ifr = document.createElement('iframe');
+        ifr.style.display = 'none';
+        //跨域发送请求给b.html，参数是#sayHello
+        ifr.src = 'http://lamport.me/b.html#sayHello';
+        document.body.appendChild(ifr);
+    }
+    function checkHash(){
+        var data = location.hash?location.hash.substring(1):'';
+        if(data){
+            //这里处理返回值
+            alert(data);
+            location.hash = '';
+        }
+    }
+    setInterval(checkHash,1000);
+    window.onload = sendRequest;
+</script>
+</body>
+</html>

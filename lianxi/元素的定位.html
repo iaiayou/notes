@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素的定位</title>
+</head>
+<body>
+	<!-- 给元素设置position属性，宽高默认为0，需再设置宽高 -->
+	<div class="fa">
+		<style type="text/css">
+			.fa1{height:50px;}
+		</style>
+		<!-- 给fa设置了position(值不为static、relative、sticky时则高度变为0) -->
+	</div>
+	<hr/>
+	<!-- relative是浮动元素发生偏移，并控制堆叠顺序 
+		z-index默认为0-->
+	<div class="fa2">
+		<style type="text/css">
+			.fa2{height:80px;}
+			.er{float:left;width:100px;height:80px;}
+			.er1{position:relative;z-index:1;right:-20px;background-color: yellow}
+			.er2{background-color: blue;}
+			/*z-index数值大的显示在上面。
+			z-index数值相同时，设置position的元素显示在上面；都设置position则后面的元素显示在上面。
+			不设置position时z-index属性不起作用。*/
+		</style>
+		<div class="er er1"></div>
+		<div class="er er2"></div>
+	</div>
+	<hr/>
+	<!-- 居中妙计-父元素设置relative，子元素设置absolute，且ltrb为0、margin为auto
+		子元素ltrb都设置为auto，则元素被打回原型，恢复到常规流中。 -->
+	<div class="fa3">
+		<style type="text/css">
+			.fa3{height:80px;position:relative;}
+			.er3{
+				position:absolute;
+				width:60px;
+				height:60px;
+				left:0;
+				right:0;
+				top:0;
+				bottom:0;
+				margin:auto;
+				background-color: yellow
+			}
+		</style>
+		<div class="er3"></div>
+	</div>
+</body>
+</html>

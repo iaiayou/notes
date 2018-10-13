@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-bind</title>
+</head>
+<body>
+
+	<img v-bind:src="imageSrc">
+
+	<div :class="{ red: isRed }"></div>
+	<!-- red表示div的class名，isRed值为boolean类型 -->
+	<div :class="[classA, classB]"></div>
+	<div :class="{classA, {classB: isB, classC: isC }}"></div>
+	<!-- 思考，上面的这些变量，哪些是字符串，哪些是布尔值？ -->
+	<!-- imageSrc是字符串， -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+
+<!-- window.name的使用 -->
+<input type="button" value="What's the name of 'myWindow'?"
+onclick="checkWin()">
+<script type="text/javascript">
+	myWindow=window.open('','MyName','width=200,height=100')
+	myWindow.document.write("This is 'myWindow'")
+	function checkWin()
+	{
+		document.write(myWindow.name)
+	}
+</script>
+
+</body>
+</html>

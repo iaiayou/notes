@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垂直三栏布局-中间自适应</title>
+	<style type="text/css">
+		html *{
+			margin:0;
+			padding:0;
+		}
+		html,body,section{
+			height:100%;
+		}
+	</style>
+</head>
+<body>
+	<!-- flex布局 -->
+	<!-- <section class="flex">
+		<style type="text/css">
+			.flex{height:100%;display: flex;flex-direction: column;}
+			.flex .top{height:100px;background-color:yellow;}
+			.flex .center{flex: 1;background-color:red;}
+			.flex .footer{height:100px;background-color:blue;}
+		</style>
+		<div class="top"></div>
+		<div class="center"></div>
+		<div class="footer"></div>
+	</section> -->
+	
+	<!-- grid布局 -->
+	<!-- <section class="grid">
+		<style type="text/css">
+			.grid{
+				height:100%;
+				display: grid;
+				grid-template-rows:100px auto 100px;
+				grid-template-columns:100%;
+			}
+			.grid .top{background-color:yellow;}
+			.grid .center{background-color:red;}
+			.grid .footer{background-color:blue;}
+		</style>
+		<div class="top"></div>
+		<div class="center"></div>
+		<div class="footer"></div>
+	</section> -->
+
+	<!-- table布局 -->
+	<!-- <section class="table">
+		<style type="text/css">
+			/*设置成table属性的元素一定要设置宽和高，默认都为0*/
+			.table{height:100%;width:100%;display: table;}
+			.table>div{display: table-row;}
+			/*设置成table-row后只有当div中有内容时才会显示背景颜色，div中无内容时则不会显示背景。
+			div不设置display属性，则top和footer有高度，center没高度。
+			div设置成table-cell则父元素宽度平分，高度为父元素高度。
+			设置成其他的table属性则显示有问题,属性值都有table-caption\table-cell\table-column\table-column-group\table-row\table-row-group\table-header-group\table-footer-group*/
+			.table .top{height:100px;background-color:yellow;}
+			.table .center{background-color:red;}
+			.table .footer{height:100px;background-color:blue;}
+		</style>
+		<div class="top">111</div>
+		<div class="center">222</div>
+		<div class="footer">33</div>
+	</section> -->
+
+</body>
+</html>

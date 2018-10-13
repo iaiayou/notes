@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Layout</title>
+	<style media="screen">
+		/*meida属性用于为不同的媒介类型规定不同的样式。screen计算机屏幕。*/
+		/*初始化页面样式。每个浏览器对html标签都有初始化的样式。*/
+		html *{
+			padding:0;
+			margin:0;
+		}
+		.layout{
+			margin-top:20px;
+		}
+		.layout article div{
+			min-height:100px;
+		}
+		/*section>article:after{
+			content: '';
+			display:block;
+			clear: both;
+			width: 0;
+			height:0;
+			visibility: hidden;
+		}*/
+	</style>
+</head>
+<body>
+	<!-- 五中解决方案，使用section标签区分 -->
+	<!-- 1.使用浮动 -->
+	<section class="layout float">
+		<style media="screen">
+			.layout.float .left{
+				float:left;
+				width:300px;
+				background:red;
+			}
+			.layout.float .right{
+				float:right;
+				width:300px;
+				background:blue;
+			}
+			/*浮动：
+			 中间样式不需要设置宽度，利用块元素宽度自动撑开.
+			 中间元素的宽度为父元素宽度值，两侧被浮动的元素盖住，但是内容不会被浮动元素盖住。
+			 当缩小浏览器宽度时，中间元素内容超出后，超出的内容会显示在浮动元素的下面，有背景颜色.
+			 当页面宽度小于left+right的宽度时，right元素会挤占下面元素空间，使下面元素下移。*/
+			.layout.float .center{
+				background:yellow;
+			}
+		</style>
+		<!-- 使用article作为容器 -->
+		<article class="left-right-center">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="center">
+				<h1>浮动解决方案</h1>
+				1.这是三栏布局的中间部分
+				2.这是三栏布局的中间部分
+			</div>
+		</article>
+	</section>
+	<!-- 2.绝对定位 -->
+	<section class="layout absolute">
+		<style media="screen">
+			/*绝对定位：
+			当页面宽度缩小，中间元素内容溢出时，中间元素的高度增加，宽度不变。
+			当页面宽度小于left+right宽度时，中间元素宽度为0，right会覆盖部分left元素。center元素的内容会出现在left之后，竖直显示。*/
+			.layout.absolute .left-center-right>div{
+				position:absolute;
+			}
+			.layout.absolute .left{
+				left:0;
+				width:300px;
+				background:red;
+			}
+			.layout.absolute .center{
+				left:300px;
+				right:300px;
+				background:yellow;
+			}
+			.layout.absolute .right{
+				right:0;
+				width:300px;
+				background:blue;
+			}
+		</style>
+		<article class="left-center-right">
+			<div class="left"></div>
+			<div class="center">
+				<h1>绝对定位解决方案</h1>
+				1.这个三栏布局绝对定位中间部分
+				1.这个三栏布局绝对定位中间部分
+			</div>
+			<div class="right"></div>
+		</article>
+	</section>
+	<!-- 3.flexbox -->
+	<section class="layout flexbox">
+		<!-- flex：
+		当页面宽度缩小，甚至小于left+right宽度时。由于flex：1的设置，flex-shrink默认值为1，当宽度缩小，先缩小center的宽度，然后left+right的宽度会等比缩小，center也会继续缩小，内容溢出。 -->
+		<style>
+		.layout.flexbox{
+			margin-top:140px;
+		}
+		.layout.flexbox .left-center-right{
+			display: flex;
+		}
+		.layout.flexbox .left{
+			width:300px;
+			background: red;
+		}
+		.layout.flexbox .center{
+			flex:1; /*flex为1中间自适应*/
+			background:yellow;
+		}
+		.layout.flexbox .right{
+			width:300px;
+			background:blue;
+		}
+		</style>
+		<article class="left-center-right">
+			<div class="left">
+				<h1>flexbox解决方案</h1>
+				1.这个三栏布局flexbox中间部分
+				1.这个三栏布局flexbox中间部分
+				1.这个三栏布局flexbox中间部分
+				1.这个三栏布局flexbox中间部分
+			</div>
+			<div class="center">
+				<h1>flexbox解决方案</h1>
+				1.这个三栏布局flexbox中间部分
+				1.这个三栏布局flexbox中间部分
+			</div>
+			<div class="right">
+				<h1>flexbox解决方案</h1>
+				1.这个三栏布局flexbox中间部分
+				1.这个三栏布局flexbox中间部分
+				1.这个三栏布局flexbox中间部分
+				1.这个三栏布局flexbox中间部分
+			</div>
+		</article>
+	</section>
+	<!-- 4.表格布局 -->
+	<section class="layout table">
+		<style>
+			/*table：
+			宽度缩小时，left+right+center也会适当缩小，内容溢出*/
+			.layout.table .left-center-right{
+				width: 100%;
+				display: table;
+				height:100px;
+			}
+			.layout.table .left-center-right>div{
+				display:table-cell;
+			}
+			.layout.table .left{
+				width:300px;
+				background:red;
+			}
+			.layout.table .center{
+				background:yellow;
+			}
+			.layout.table .right{
+				width:300px;
+				background:blue;
+			}
+		</style>
+		<article class="left-center-right">
+			<div class="left"></div>
+			<div class="center">
+				<h1>表格布局解决方案</h1>
+				1.这个三栏布局表格布局中间部分
+				1.这个三栏布局表格布局中间部分
+			</div>
+			<div class="right"></div>
+		</article>
+	</section>
+	<!-- 5.网格布局 -->
+	<section class="layout grid">
+		<style>
+			/*grid：
+			宽度缩小时，left+right+center也会适当缩小，内容溢出。
+			但是栅格布局中的栅格可能会溢出父元素，形成隐士网格轨道。*/
+			.layout.grid .left-center-right{
+				display: grid;
+				width:100%;
+				grid-template-rows:100px;
+				grid-template-columns:300px auto 300px;
+			}
+			.layout.grid .left{
+				background:red;
+			}
+			.layout.grid .center{
+				background:yellow;
+			}
+			.layout.grid .right{
+				background:blue;
+			}
+		</style>
+		<article class="left-center-right">
+			<div class="left"></div>
+			<div class="center">
+				<h1>网格布局解决方案</h1>
+				1.这个三栏布局网格布局中间部分
+				1.这个三栏布局网格布局中间部分
+			</div>
+			<div class="right"></div>
+		</article>
+	</section>
+</body>
+</html>

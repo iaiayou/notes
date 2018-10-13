@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圣杯布局&双飞翼布局</title>
+	<style type="text/css">
+		html *{margin:0;padding:0;}
+	</style>
+</head>
+<body>
+	<!-- 圣杯布局 -->
+	<div class="container">
+		<style type="text/css">
+			.container{
+				padding:0 300px 0 200px;
+			}
+			.center,.left,.right{
+				float:left;
+				position:relative;
+				min-height:150px;
+			}
+			.center{width:100%;background-color: yellow;}
+			.left{width:200px;background-color: red;
+				margin-left:-100%;left:-200px;}
+			.right{width: 300px;background-color: blue;
+				margin-left:-300px;right:-300px;}
+		</style>
+		<div class="center"></div>
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+
+	<!-- 双飞翼布局 -->
+	<!-- <style type="text/css">
+		.container{
+			width:100%;
+		}
+		.container,.left,.right{
+			float:left;
+			min-height:50px;
+		}
+		.center{
+			min-height:50px;
+			margin-left:200px;
+			margin-right:300px;
+			background-color: yellow;
+		}
+		.left{
+			margin-left:-100%;
+			width:200px;
+			background-color: red;
+		}
+		.right{
+			margin-left:-300px;
+			width:300px;
+			background-color: blue;
+		}
+	</style>
+	<div class="container">
+		<div class="center">
+		11111111111111111111111111111111111111111111
+		11111111111111111111111111111111111111111111
+		11111111111111111111111111111111111111111111
+		11111111111111111111111111111111111111111111
+		11111111111111111111111111111111111111111111
+		11111111111111111111111111111111111111111111
+		11111111111111111111111111111111111111111111
+		11111111111111111111111111111111111111111111
+		</div>
+	</div>
+	<div class="left">
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+	</div>
+	<div class="right">
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+		22222222222222222222222222222222222222222222
+	</div> -->
+</body>
+</html>
