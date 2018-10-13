@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"> -->
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	//手机淘宝参考
+	var metaEl = doc.createElement('meta');
+	//判断是否是视网膜屏，如果是视网膜屏，则边框会变成2倍粗
+	//或者判断是否是i7，i7缩放比例要变更小
+	var scale = isRetina ? 0.5:1; 
+	metaEl.setAttribute('name','viewport')
+	metaEl.setAttribute('content','initial-scale='+scale+',maximum-scale='
+		+scale+',minimum-scale='+scale+',user-scalable=no');
+	if(docEl.firstElementChild){
+		document.documentElement.firstElementChild.appendChild(metaEl);
+	}else{
+		var wrap = doc.createElement('div')
+		wrap.appendChild(metaEl)
+		document.write(wrap.innnerHTML)
+	}
+</script>
